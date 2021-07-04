@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+	<title>Getting Started: Serving Web Content</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${!#lists.isEmpty(dataList)}" th:each="data: ${dataList}">
+				<td th:text="${data.id}"></td>
+				<td th:text=${data.name}></td>
+				<td th:text=${data.description}></td>
+			</tr>
+		</tbody>
+</body>
+</html>
