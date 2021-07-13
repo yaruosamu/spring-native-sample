@@ -33,25 +33,8 @@ spring.datasource.username=${YOUR_USER_NAME}
 spring.datasource.password=${YOUR_PASSWORD}
 ```
 
-Create database & table and insert test data into PostgeSQL.
-
-> NOTE: 
-> Table name must be 'data'.
-
-```
-CREATE DATABASE ${YOUR_DB_NAME};
-
-CREATE TABLE data (
-     id VARCHAR(100) NOT NULL,
-     name TEXT NOT NULL,
-     description TEXT NOT NULL,
-     PRIMARY KEY(id)
-);
-
-INSERT INTO data VALUES(1, 'any name1', 'any description1');
-INSERT INTO data VALUES(2, 'any name2', 'any description2');
-...
-```
+Sample data is inserted when Spring Boot initialization.
+They are defined in `src/main/resources/data.sql`
 
 ### GraalVM Setting
 
