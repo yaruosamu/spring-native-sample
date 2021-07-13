@@ -1,9 +1,17 @@
 package com.sample.model;
 
-import javax.persistence.Entity;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import javax.persistence.Id;
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name="data")
 public class Data {
@@ -12,38 +20,4 @@ public class Data {
 	private Integer id;
 	private String name;
 	private String description;
-
-    public Data() {
-        
-    }
-
-	public Data(Integer id, String name, String description) {
-		setId(id);
-		setName(name);
-		setDescription(description);
-    }
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
 }
