@@ -4,15 +4,15 @@ This is a sample to try [Spring Native](https://github.com/spring-projects-exper
 This sample includes simple Spring Boot web app and builds GraalVM native application by Spring Native.
 
 > NOTE: 
-> This sample uses Spring Native 0.10.1(Beta).
+> This sample uses Spring Native 0.10.3(Beta).
 > Now Spring Native supports spring-boot-starter-web, spring-boot-starter-thymeleaf, spring-boot-starter-data-jpa and more.
 > This sample aims to confirm support for these libraries. 
 
 ## Environments
 
 * Apache Maven 3.8.1
-* SDKMAN 5.11.6
-  * GraalVM 21.1.0
+* SDKMAN 5.12.4
+  * GraalVM 21.2.0 (Based on Java 11)
 * PostgreSQL 12.7
 
 ## How to Use
@@ -41,15 +41,15 @@ They are defined in `src/main/resources/data.sql`
 Get GraalVM binary by SDKMAN
 
 ```
-sdk install java 21.1.0.r11-grl
-sdk use java 21.1.0.r11-grl
+sdk install java 21.2.0.r11-grl
+sdk use java 21.2.0.r11-grl
 gu install native-image
 ```
 
 ### Build Application and Compile Native Image
 
 ```
-mvn -Pnative -DskipTests package
+mvn -Pnative package
 ```
 
 ### Run Native Application
@@ -59,7 +59,7 @@ target/Spring-Native-Sample
 ```
 
 After launching Spring Application, you will check sample web page at [localhost:8080](http://localhost:8080/).
-This page shows test data list inserted into DB.
+This page shows test data inserted into DB.
 
 ## References
 
