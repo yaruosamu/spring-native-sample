@@ -91,6 +91,13 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <buildArgs>
+                                <!-- Needs for Flight Recorder, Heapdump and Threaddump -->
+                                <!-- Only GraalVM EE can output Heapdump and Threaddump -->
+                                <buildArg>-H:+AllowVMInspection</buildArg>
+                                <!-- Needs for GDB Analysys -->
+                                <buildArg>-H:GenerateDebugInfo=1</buildArg>
+                            </buildArgs>
                         </configuration>
                     </plugin>
                     <plugin>
