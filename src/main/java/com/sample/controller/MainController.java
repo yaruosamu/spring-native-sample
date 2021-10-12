@@ -24,16 +24,4 @@ public class MainController {
 		model.addAttribute("dataList", dataList);
 		return "information";
 	}
-
-    @GetMapping("oome")
-    public String crashByOutOfMemoryError(Model model) {
-        StringBuilder strBuilder = new StringBuilder("Combine String until OutOMemoryError Occurs!");
-        int cnt = 0;
-        while(cnt++ < Integer.MAX_VALUE) {
-            strBuilder.append("Let's Crash with OutOfMemoryError!");
-        }
-
-        // Can't reach this error page
-        return "error";
-    }
 }
