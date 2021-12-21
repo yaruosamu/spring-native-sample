@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sample</groupId>
-	<artifactId>Spring-Native-Sample</artifactId>
+	<artifactId>spring-native-sample</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Spring Native Sample</name>
 	<description>Demo project for Spring Native</description>
@@ -55,6 +55,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <builder>paketobuildpacks/builder:tiny</builder>
+                        <env>
+                            <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+                        </env>
+                    </image>
+                </configuration>
 			</plugin>
             <plugin>
                 <groupId>org.springframework.experimental</groupId>
