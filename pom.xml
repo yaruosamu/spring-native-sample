@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.4</version>
+		<version>2.6.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sample</groupId>
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>org.springframework.experimental</groupId>
             <artifactId>spring-native</artifactId>
-            <version>0.10.3</version>
+            <version>0.11.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -59,7 +59,7 @@
             <plugin>
                 <groupId>org.springframework.experimental</groupId>
                 <artifactId>spring-aot-maven-plugin</artifactId>
-                <version>0.10.3</version>
+                <version>0.11.0</version>
                 <executions>
                     <execution>
                         <id>generate</id>
@@ -80,7 +80,8 @@
                     <plugin>
                         <groupId>org.graalvm.buildtools</groupId>
                         <artifactId>native-maven-plugin</artifactId>
-                        <version>0.9.3</version>
+                        <version>0.9.8</version>
+                        <extensions>true</extensions>
                         <executions>
                             <execution>
                                 <id>build-native</id>
@@ -91,13 +92,6 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <buildArgs>
-                                <!-- Needs for Flight Recorder, Heapdump and Threaddump -->
-                                <!-- Only GraalVM EE can output Heapdump and Threaddump -->
-                                <buildArg>-H:+AllowVMInspection</buildArg>
-                                <!-- Needs for GDB Analysys -->
-                                <buildArg>-H:GenerateDebugInfo=1</buildArg>
-                            </buildArgs>
                         </configuration>
                     </plugin>
                     <plugin>
