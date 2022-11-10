@@ -106,6 +106,12 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <buildArgs>
+                                <arg>-g</arg>
+                                <arg>-H:+SourceLevelDebug -H:-DeleteLocalSymbols</arg>
+                                <arg>--enable-monitoring=all</arg>
+                                <arg>--enable-sbom</arg>
+                            </buildArgs>
                         </configuration>
                     </plugin>
                     <plugin>
